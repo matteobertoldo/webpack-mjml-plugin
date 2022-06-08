@@ -1,0 +1,17 @@
+{
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "extends": ["plugin:prettier/recommended", "standard"],
+  "rules": {
+    "camelcase": ["error"],
+    "global-require": "error",
+    "import/extensions": ["error", "never"],
+    "indent": ["error", 2],
+    "multiline-ternary": 0,
+    "no-console": "error",
+    "semi": ["error", "always"],
+    "space-before-function-paren": 0
+  }
+}
