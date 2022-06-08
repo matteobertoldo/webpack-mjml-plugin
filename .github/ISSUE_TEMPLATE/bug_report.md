@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Create a report to help us to improve Atomforce.
+about: Create a report to help us to improve MJML Webpack Plugin.
 title: ''
 labels: bug
 assignees: matteobertoldo

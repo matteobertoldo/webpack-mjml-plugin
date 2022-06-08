@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Suggest an idea for a new feature in Atomforce
+about: Suggest an idea for a new feature in MJML Webpack Plugin.
 title: ''
 labels: enhancement
 assignees: matteobertoldo
