@@ -6,8 +6,8 @@
   <a href="https://github.com/prettier/prettier">
     <img src="https://img.shields.io/badge/code_of-conduct-ff69b4.svg" alt="Prettier" />
   </a>
-  <a href="https://snyk.io/test/github/matteobertoldo/mjm-webpack-plugin?targetFile=package.json">
-    <img src="https://snyk.io/test/github/matteobertoldo/mjm-webpack-plugin/badge.svg?targetFile=package.json" alt="Known Vulnerabilities" />
+  <a href="https://snyk.io/test/github/matteobertoldo/mjml-webpack-plugin?targetFile=package.json">
+    <img src="https://snyk.io/test/github/matteobertoldo/mjml-webpack-plugin/badge.svg?targetFile=package.json" alt="Known Vulnerabilities" />
   </a>
   <a href="https://www.npmjs.com/package/mjm-webpack-plugin">
     <img src="https://img.shields.io/npm/v/mjm-webpack-plugin.svg" />
