@@ -1,0 +1,19 @@
+language: node_js
+node_js: '16.15.0' # .nvmrc
+os: linux
+
+before_script:
+  - nvm use
+  - npm i
+  - npm run parse
+
+# script:
+#   - npm run test TODO
+
+git:
+  depth: 3
+
+notifications:
+  email:
+    on_success: change
+    on_failure: change

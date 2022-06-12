@@ -1,0 +1,10 @@
+assets
+.editorconfig
+.eslintrc.json
+.nvmrc
+.prettierignore
+.prettierrc
+CODE_OF_CONDUCT.md
+commitlint.config.js
+CONTRIBUTING.md
+PULL_REQUEST_TEMPLATE.md

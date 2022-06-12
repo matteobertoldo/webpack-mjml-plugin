@@ -1,6 +1,6 @@
 {
   "name": "mjml-webpack-plugin",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "Webpack MJML plugin for compiling MJML files.",
   "main": "index.js",
   "scripts": {
@@ -10,11 +10,12 @@
     "lint:js": "eslint .",
     "lint:js:fix": "eslint . --fix",
     "parse": "npm run format && npm run lint",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/matteobertoldo/mjml-webpack-plugin.git"
+    "url": "https://github.com/matteobertoldo/mjml-webpack-plugin.git"
   },
   "keywords": [
     "webpack",
@@ -25,7 +26,8 @@
   "author": "Matteo Bertoldo <mrbert93@gmail.com>",
   "license": "MIT",
   "engines": {
-    "node": ">=16.15.0"
+    "node": ">=16.15.0",
+    "npm": ">=8.5.5"
   },
   "bugs": {
     "url": "https://github.com/matteobertoldo/mjml-webpack-plugin/issues"
@@ -44,8 +46,14 @@
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-prettier": "^4.0.0",
     "husky": "^8.0.1",
+    "jest": "^28.1.1",
     "lint-staged": "^13.0.0",
-    "prettier": "^2.6.2"
+    "prettier": "^2.6.2",
+    "semantic-release": "^19.0.3"
+  },
+  "dependencies": {
+    "fs-extra": "^10.1.0",
+    "glob": "^8.0.3"
   },
   "lint-staged": {
     "*.{md,js,json,yml}": "prettier --write",

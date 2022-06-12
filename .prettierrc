@@ -6,13 +6,5 @@
   "semi": true,
   "tabWidth": 2,
   "trailingComma": "none",
-  "useTabs": false,
-  "overrides": [
-    {
-      "files": ["*.md"],
-      "options": {
-        "tabWidth": 4
-      }
-    }
-  ]
+  "useTabs": false
 }
