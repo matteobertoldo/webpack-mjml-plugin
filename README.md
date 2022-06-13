@@ -71,10 +71,10 @@ module.exports = {
 
 ## Contributing :busts_in_silhouette:
 
-Please read [CONTRIBUTING.md](https://github.com/matteobertoldo/webpack-mjml-plugin/blob/main/CONTRIBUTING.md) for details on code of conduct, and the process for submitting pull requests.
+Please read [CONTRIBUTING.md](https://github.com/matteobertoldo/webpack-mjml-plugin/blob/master/CONTRIBUTING.md) for details on code of conduct, and the process for submitting pull requests.
 
 ## License :balance_scale:
 
-[![npm](https://img.shields.io/npm/l/mjm-webpack-plugin.svg)](https://www.npmjs.com/package/mjm-webpack-plugin)
+[![npm](https://img.shields.io/npm/l/webpack-mjml-plugin.svg)](https://www.npmjs.com/package/webpack-mjml-plugin)
 
-Webpack MJML Plugin is licensed under the MIT License - see the [LICENSE.md](https://github.com/matteobertoldo/mjml-webpack-plugin/blob/main/LICENSE) file for details.
+Webpack MJML Plugin is licensed under the MIT License - see the [LICENSE.md](https://github.com/matteobertoldo/webpack-mjml-plugin/blob/master/LICENSE) file for details.

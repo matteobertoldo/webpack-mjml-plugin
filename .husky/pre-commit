@@ -2,3 +2,15 @@
 . "$(dirname "$0")/_/husky.sh"
 
 npx lint-staged
+
+branch="$(git rev-parse --abbrev-ref HEAD)"
+
+if [ "$branch" = "development" ]; then
+  echo "You cannot commit directly to this branch. It is necessary to initialize a new branch and create a pull request."
+  exit 1
+fi
+
+if [ "$branch" = "master" ]; then
+  echo "You cannot commit directly to this branch. It is necessary to initialize a new branch and create a pull request."
+  exit 1
+fi
