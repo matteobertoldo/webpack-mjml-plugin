@@ -1,7 +1,7 @@
 {
-  "name": "mjml-webpack-plugin",
+  "name": "webpack-mjml-plugin",
   "version": "0.0.0-development",
-  "description": "Webpack MJML plugin for compiling MJML files.",
+  "description": "Webpack MJML Plugin for compiling MJML files.",
   "main": "index.js",
   "scripts": {
     "format": "prettier --config .prettierrc --write .",
@@ -11,7 +11,8 @@
     "lint:js:fix": "eslint . --fix",
     "parse": "npm run format && npm run lint",
     "postinstall": "husky install",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "test": "npm run parse"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,7 @@
   },
   "keywords": [
     "webpack",
+    "webpack-plugin",
     "mjml",
     "mjml-framework",
     "mjml-to-html"

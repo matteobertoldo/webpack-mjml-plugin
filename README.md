@@ -6,14 +6,14 @@
   <a href="https://github.com/prettier/prettier">
     <img src="https://img.shields.io/badge/code_of-conduct-ff69b4.svg" alt="Prettier" />
   </a>
-  <a href="https://snyk.io/test/github/matteobertoldo/mjml-webpack-plugin?targetFile=package.json">
-    <img src="https://snyk.io/test/github/matteobertoldo/mjml-webpack-plugin/badge.svg?targetFile=package.json" alt="Known Vulnerabilities" />
+  <a href="https://snyk.io/test/github/matteobertoldo/webpack-mjml-plugin?targetFile=package.json">
+    <img src="https://snyk.io/test/github/matteobertoldo/webpack-mjml-plugin/badge.svg?targetFile=package.json" alt="Known Vulnerabilities" />
   </a>
-  <a href="https://app.travis-ci.com/matteobertoldo/mjml-webpack-plugin">
-    <img src="https://app.travis-ci.com/matteobertoldo/mjml-webpack-plugin.svg?branch=master" alt="Travis CI Build">
+  <a href="https://app.travis-ci.com/matteobertoldo/webpack-mjml-plugin">
+    <img src="https://app.travis-ci.com/matteobertoldo/webpack-mjml-plugin.svg?branch=master" alt="Travis CI Build">
   </a>
-  <a href="https://www.npmjs.com/package/mjml-webpack-plugin">
-    <img src="https://img.shields.io/npm/v/mjml-webpack-plugin.svg" alt="NPM Package Version" />
+  <a href="https://www.npmjs.com/package/webpack-mjml-plugin">
+    <img src="https://img.shields.io/npm/v/webpack-mjml-plugin.svg" alt="NPM Package Version" />
   </a>
 </p>
 
