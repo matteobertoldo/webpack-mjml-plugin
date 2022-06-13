@@ -7,9 +7,6 @@ before_script:
   - npm i
   - npm run parse
 
-# script:
-#   - npm run test TODO
-
 git:
   depth: 3
 
