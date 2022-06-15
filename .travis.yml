@@ -17,7 +17,7 @@ cache:
 jobs:
   include:
     - stage: release
-      node_js: lts/*
+      node_js: '16.15.0'
 
       deploy:
         provider: script
