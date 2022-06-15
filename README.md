@@ -1,7 +1,7 @@
 <p align="center">
   <img
     width="320px"
-    src="https://raw.githubusercontent.com/matteobertoldo/webpack-mjml-plugin/assets/webpack-mjml-plugin.svg?sanitize=true"
+    src="https://raw.githubusercontent.com/matteobertoldo/webpack-mjml-plugin/master/assets/webpack-mjml-plugin-logo.svg?sanitize=true"
     alt="Webpack MJML Plugin - Logo"
   />
 </p>

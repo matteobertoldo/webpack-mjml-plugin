@@ -1,6 +1,7 @@
 const fs = require('fs-extra');
 const glob = require('glob');
 const mjml2html = require('mjml');
+const process = require('process');
 
 /**
  * @type {{extension: string, outputPath: string}}
@@ -25,8 +26,9 @@ const WebpackMjmlStore = function (inputPath, options) {
  * @param compiler
  */
 WebpackMjmlStore.prototype.apply = function (compiler) {
+  const that = this;
   compiler.hooks.emit.tapAsync('webpack-mjml-store', function (compilation, callback) {
-    fs.ensureDirSync(this.options.outputPath);
+    fs.ensureDirSync(that.options.outputPath);
 
     glob(`${this.inputPath}/**/*.mjml`, function (err, files) {
       if (err) {
