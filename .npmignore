@@ -6,6 +6,8 @@ assets/
 .nvmrc
 .prettierignore
 .prettierrc
+.releaserc.json
+.travis.yml
 CODE_OF_CONDUCT.md
 commitlint.config.js
 CONTRIBUTING.md
