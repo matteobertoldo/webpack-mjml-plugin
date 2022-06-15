@@ -1,6 +1,6 @@
 {
   "name": "webpack-mjml-plugin",
-  "version": "0.0.0-development",
+  "version": "1.0.0",
   "description": "Webpack MJML Plugin for compiling MJML files.",
   "main": "index.js",
   "scripts": {
@@ -27,10 +27,6 @@
   ],
   "author": "Matteo Bertoldo <mrbert93@gmail.com>",
   "license": "MIT",
-  "engines": {
-    "node": ">=16.15.0",
-    "npm": ">=8.5.5"
-  },
   "bugs": {
     "url": "https://github.com/matteobertoldo/webpack-mjml-plugin/issues"
   },
