@@ -14,5 +14,5 @@
 
 Check all those that are applicable and complete. Put an `x` between the brackets (without spaces).
 
--   [ ] Merged with latest `main` branch
--   [ ] Travis CI passes (Linux support)
+- [ ] Merged with latest `master` branch
+- [ ] Travis CI passes (Linux support)
