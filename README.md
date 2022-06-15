@@ -85,7 +85,7 @@ Please read [CONTRIBUTING.md](https://github.com/matteobertoldo/webpack-mjml-plu
 
 <p>
   <a href="https://www.npmjs.com/package/webpack-mjml-plugin">
-    <img src="https://img.shields.io/npm/l/webpack-mjml-plugin.svg" />
+    <img src="https://img.shields.io/npm/l/webpack-mjml-plugin.svg" alt="NPM License" />
   </a>
 </p>
 
