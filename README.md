@@ -83,6 +83,10 @@ Please read [CONTRIBUTING.md](https://github.com/matteobertoldo/webpack-mjml-plu
 
 ## License :balance_scale:
 
-[![npm](https://img.shields.io/npm/l/webpack-mjml-plugin.svg)](https://www.npmjs.com/package/webpack-mjml-plugin)
+<p>
+  <a href="https://www.npmjs.com/package/webpack-mjml-plugin">
+    <img src="https://img.shields.io/npm/l/webpack-mjml-plugin.svg" />
+  </a>
+</p>
 
 Webpack MJML Plugin is licensed under the MIT License - see the [LICENSE.md](https://github.com/matteobertoldo/webpack-mjml-plugin/blob/master/LICENSE) file for details.
