@@ -1,4 +1,6 @@
-assets
+.github/
+.husky/
+assets/
 .editorconfig
 .eslintrc.json
 .nvmrc
