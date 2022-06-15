@@ -1,4 +1,3 @@
-.github/workflows/codeql-analysis.yml
 node_modules
 CHANGELOG.md
 LICENSE.md
