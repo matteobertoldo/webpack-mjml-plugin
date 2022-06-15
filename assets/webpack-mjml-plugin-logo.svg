@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg
+  width="982px"
+  height="141px"
+  viewBox="0 0 982 141"
+  version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+>
+  <title>webpack mjml Plugin</title>
+  <defs>
+    <filter x="-0.8%" y="-6.2%" width="101.6%" height="112.4%" filterUnits="objectBoundingBox" id="filter-1">
+      <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1" />
+      <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
+      <feColorMatrix
+        values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0"
+        type="matrix"
+        in="shadowBlurOuter1"
+        result="shadowMatrixOuter1"
+      />
+      <feMerge>
+        <feMergeNode in="shadowMatrixOuter1" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <linearGradient x1="50%" y1="50%" x2="50%" y2="100%" id="linearGradient-2">
+      <stop stop-color="#D96B48" offset="0%" />
+      <stop stop-color="#DA5A48" offset="37.9360465%" />
+      <stop stop-color="#DD3648" offset="100%" />
+    </linearGradient>
+    <linearGradient x1="50%" y1="50%" x2="50%" y2="100%" id="linearGradient-3">
+      <stop stop-color="#D96B48" offset="0%" />
+      <stop stop-color="#DD3648" offset="100%" />
+    </linearGradient>
+    <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-4">
+      <stop stop-color="#D96B48" offset="0%" />
+      <stop stop-color="#DD3648" offset="100%" />
+    </linearGradient>
+    <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-5">
+      <stop stop-color="#D96B48" offset="0%" />
+      <stop stop-color="#DD3648" offset="100%" />
+    </linearGradient>
+  </defs>
+  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="webpack-mjml-Plugin" filter="url(#filter-1)" transform="translate(6.000000, 6.000000)" fill-rule="nonzero">
+      <text fill="url(#linearGradient-2)" font-family="FoundryContextW03-Bd" font-size="90" font-weight="bold">
+        <tspan x="0" y="83">webpack</tspan>
+        <tspan x="503.73" y="83" font-family="BrandonGrotesque-Bold, Brandon Grotesque">mjml</tspan>
+        <tspan x="707.4" y="83">Plugin</tspan>
+      </text>
+      <g id="mjml" transform="translate(414.000000, 38.000000)">
+        <path
+          d="M7.2487725,0 L35.7512275,0 C39.7626841,0 43,3.34951456 43,7.5 C43,11.6504854 39.7626841,15 35.7512275,15 L7.2487725,15 C3.23731588,15 0,11.6504854 0,7.5 C0,3.34951456 3.23731588,0 7.2487725,0 Z"
+          id="Path"
+          fill="url(#linearGradient-3)"
+        />
+        <circle id="Oval" fill="#D96B48" cx="54.5" cy="7.5" r="7.5" />
+        <path
+          d="M25.8056715,21.0187337 L54.1943285,21.0187337 C58.2296238,20.7281991 61.698562,23.8514462 61.9817406,27.9915644 C62.2649192,32.1316827 59.220749,35.6907317 55.1854536,35.9812663 C54.9730697,35.9812663 54.6898911,35.9812663 54.4775071,35.9812663 L25.8056715,35.9812663 C21.7703762,36.2718009 18.301438,33.1485538 18.0182594,29.0084356 C17.7350808,24.8683173 20.779251,21.3092683 24.8145464,21.0187337 C25.0269303,21.0187337 25.3101089,21.0187337 25.5224929,21.0187337 C25.5224929,21.0187337 25.8056715,21.0187337 25.8056715,21.0187337 Z"
+          id="Path"
+          fill="#D96B48"
+        />
+        <circle id="Oval" fill="url(#linearGradient-4)" cx="7.5" cy="28.5" r="7.5" />
+        <path
+          d="M7.2487725,42 L35.7512275,42 C39.7626841,42 43,45.3495146 43,49.5 L43,49.5 C43,53.6504854 39.7626841,57 35.7512275,57 L7.2487725,57 C3.23731588,57 0,53.6504854 0,49.5 L0,49.5 C0,45.3495146 3.23731588,42 7.2487725,42 Z"
+          id="Path"
+          fill="url(#linearGradient-5)"
+        />
+        <circle id="Oval" fill="#D96B48" cx="54.5" cy="49.5" r="7.5" />
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,4 +1,10 @@
-<h1 align="center">Webpack MJML Plugin</h1>
+<p align="center">
+  <img
+    width="320px"
+    src="https://raw.githubusercontent.com/matteobertoldo/webpack-mjml-plugin/assets/webpack-mjml-plugin.svg?sanitize=true"
+    alt="Webpack MJML Plugin - Logo"
+  />
+</p>
 
 <p align="center">Webpack <a href="https://mjml.io">MJML</a> Plugin for compiling MJML files.</p>
 
@@ -56,12 +62,14 @@ module.exports = {
       extension: options.extension,
       outputPath: options.outputPath,
       // MJML options (https://documentation.mjml.io/#inside-node-js)
-      filePath: path.resolve(__dirname, 'dist/to/mjml'),
+      filePath: path.resolve(__dirname, 'src/to/mjml'),
       keepComments: false
     })
   ]
 };
 ```
+
+In addition to the options available in the MJML documentation, there are 3 additional parameters described in the table below:
 
 | Parameter            |   Type   |     Default     | Description                                         |
 | -------------------- | :------: | :-------------: | --------------------------------------------------- |
