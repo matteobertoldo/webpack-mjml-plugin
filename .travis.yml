@@ -10,6 +10,23 @@ before_script:
 git:
   depth: 3
 
+cache:
+  directories:
+    - '$HOME/.npm'
+
+jobs:
+  include:
+    - stage: release
+      node_js: '16.15.0'
+
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script:
+          - npx semantic-release
+        # on:
+        #   branch: release
+
 notifications:
   email:
     on_success: change
