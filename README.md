@@ -1,10 +1,10 @@
-<p align="center">
+<div align="center">
   <img
-    width="320px"
+    width="500px"
     src="https://raw.githubusercontent.com/matteobertoldo/webpack-mjml-plugin/master/assets/webpack-mjml-plugin-logo.svg?sanitize=true"
     alt="Webpack MJML Plugin - Logo"
   />
-</p>
+</div>
 
 <p align="center">Webpack <a href="https://mjml.io">MJML</a> Plugin for compiling MJML files.</p>
 
