@@ -1,3 +1,11 @@
+## [1.0.1](https://github.com/matteobertoldo/webpack-mjml-plugin/compare/v1.0.0...v1.0.1) (2022-06-16)
+
+
+### Bug Fixes
+
+* removed `postinstall` condition ([beeeda3](https://github.com/matteobertoldo/webpack-mjml-plugin/commit/beeeda32105abb698a6774b6bf7afeb1de15377e))
+* removed postinstall condition ([61e4a17](https://github.com/matteobertoldo/webpack-mjml-plugin/commit/61e4a17247fc1ed89ccb8c38237e49555bd338bd))
+
 # 1.0.0 (2022-06-15)
 
 
