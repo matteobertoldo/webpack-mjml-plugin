@@ -10,7 +10,6 @@
     "lint:js": "eslint .",
     "lint:js:fix": "eslint . --fix",
     "parse": "npm run format && npm run lint",
-    "postinstall": "husky install",
     "semantic-release": "semantic-release",
     "test": "npm run parse"
   },
