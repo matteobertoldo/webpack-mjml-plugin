@@ -13,7 +13,7 @@ const defaultOptions = {
 
 /**
  * @param inputPath - {String}
- * @param options
+ * @param options - {Object}
  * @constructor
  */
 const WebpackMjmlStore = function (inputPath, options) {
@@ -126,7 +126,6 @@ WebpackMjmlStore.prototype.ensureFileExists = function (file, contents) {
       if (err) {
         throw err;
       }
-
       resolve(contents);
     });
   });
