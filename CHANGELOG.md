@@ -1,3 +1,11 @@
+## [1.0.2](https://github.com/matteobertoldo/webpack-mjml-plugin/compare/v1.0.1...v1.0.2) (2022-06-19)
+
+
+### Bug Fixes
+
+* parameter `inputPath` & npm registry ([0c36ed1](https://github.com/matteobertoldo/webpack-mjml-plugin/commit/0c36ed143c15f961be7f36b781d362bcc13ae897))
+* parameter inputPath & npm registry ([190ed05](https://github.com/matteobertoldo/webpack-mjml-plugin/commit/190ed057dcb84bbce648ece559ac7a8ca1ee6ba6))
+
 ## [1.0.1](https://github.com/matteobertoldo/webpack-mjml-plugin/compare/v1.0.0...v1.0.1) (2022-06-16)
 
 
