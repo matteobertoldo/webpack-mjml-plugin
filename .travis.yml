@@ -10,14 +10,10 @@ before_script:
 git:
   depth: 3
 
-cache:
-  directories:
-    - '$HOME/.npm'
-
 jobs:
   include:
     - stage: release
-      node_js: '16.15.0'
+      node_js: '16.15.0' # .nvmrc
 
       deploy:
         provider: script

@@ -1,0 +1,17 @@
+<mjml>
+  <mj-include path="../components/head.mjml" />
+  <mj-body>
+    <mj-section background-color="#ffffff" padding="10px 25px">
+      <mj-column>
+        <mj-text line-height="18px">
+          <p>Hello World!</p>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#ffffff">
+      <mj-column>
+        <mj-spacer height="10px" />
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

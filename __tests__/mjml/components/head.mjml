@@ -1,0 +1,6 @@
+<mj-head>
+  <mj-attributes>
+    <mj-all font-family="Arial" />
+    <mj-text font-family="Helvetica, sans-serif" font-size="13px" line-height="18px" padding="0" />
+  </mj-attributes>
+</mj-head>

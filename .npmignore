@@ -1,3 +1,4 @@
+__tests__/
 .github/
 .husky/
 assets/
@@ -12,3 +13,4 @@ CODE_OF_CONDUCT.md
 commitlint.config.js
 CONTRIBUTING.md
 PULL_REQUEST_TEMPLATE.md
+webpack.config.js
