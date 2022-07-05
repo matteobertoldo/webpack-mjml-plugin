@@ -1,3 +1,11 @@
+# [1.1.0](https://github.com/matteobertoldo/webpack-mjml-plugin/compare/v1.0.2...v1.1.0) (2022-07-05)
+
+
+### Features
+
+* **webpack-warnings:** added a new message when `inputPath` is empty ([4458f89](https://github.com/matteobertoldo/webpack-mjml-plugin/commit/4458f89cb2810e17003ce4fae1ac1dfca62f2017))
+* **webpack-warnings:** added a new message when inputPath parameter returns no files length ([89240d3](https://github.com/matteobertoldo/webpack-mjml-plugin/commit/89240d36caf8ec50c159b2b3fe115d326bce9335))
+
 ## [1.0.2](https://github.com/matteobertoldo/webpack-mjml-plugin/compare/v1.0.1...v1.0.2) (2022-06-19)
 
 
