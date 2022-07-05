@@ -1,11 +1,12 @@
 const fs = require('fs-extra');
 const glob = require('glob');
 const mjml2html = require('mjml');
-const process = require('process');
+const packageJSON = require('../package.json'); // eslint-disable-line import/extensions
+const { NoSourceFilesWarning } = require('./errors/');
 
 /**
- * @param {String} inputPath
- * @param {object} options
+ * @param {string} inputPath The path where `.mjml` files are located.
+ * @param {object} options The `options` from https://documentation.mjml.io.
  * @constructor
  */
 const WebpackMjmlStore = function (inputPath, options) {
@@ -13,6 +14,7 @@ const WebpackMjmlStore = function (inputPath, options) {
   this.defaultOptions = { extension: '.html', outputPath: process.cwd() };
   this.options = { ...this.defaultOptions, ...options };
   this.options.outputPath = this.options.outputPath.replace(/\\/g, '/');
+  this.warnings = [];
 };
 
 /**
@@ -20,7 +22,7 @@ const WebpackMjmlStore = function (inputPath, options) {
  */
 WebpackMjmlStore.prototype.apply = function (compiler) {
   const that = this;
-  compiler.hooks.emit.tapAsync('webpack-mjml-store', function (compilation, callback) {
+  compiler.hooks.make.tapAsync(packageJSON.name, function (compilation, callback) {
     fs.ensureDirSync(that.options.outputPath);
 
     glob(`${that.inputPath}/**/*.mjml`, function (err, files) {
@@ -29,12 +31,13 @@ WebpackMjmlStore.prototype.apply = function (compiler) {
       }
 
       if (!files.length) {
+        that.warnings.push(new NoSourceFilesWarning(that.inputPath, packageJSON.name));
         return callback();
       }
 
       const tasks = [];
-      for (const fileKey in files) {
-        const file = files[fileKey];
+      for (const index in files) {
+        const file = files[index];
         if (compilation.fileDependencies.add) {
           compilation.fileDependencies.add(file);
         } else {
@@ -49,6 +52,10 @@ WebpackMjmlStore.prototype.apply = function (compiler) {
 
       Promise.all(tasks).then(callback());
     });
+  });
+
+  compiler.hooks.afterCompile.tap(packageJSON.name, (compilation) => {
+    compilation.warnings = [...compilation.warnings, ...this.warnings];
   });
 };
 
@@ -82,30 +89,14 @@ WebpackMjmlStore.prototype.convertFile = function (file) {
 
       const response = mjml2html(contents, that.options);
       if (response.errors.length) {
-        console.log('\x1b[36m', `MJML warning${response.errors.length > 1 ? 's' : ''} in file "${file}":`, '\x1b[0m');
+        console.log('\x1b[31m', `MJML error${response.errors.length > 1 ? 's' : ''} in file "${file}":`, '\x1b[0m');
       }
 
-      for (const errorKey in response.errors) {
-        console.log('  -  ', response.errors[errorKey].formattedMessage);
+      for (const index in response.errors) {
+        console.log('-', response.errors[index].formattedMessage);
       }
 
       resolve(response.html);
-    });
-  });
-};
-
-/**
- * @param {string} file
- * @param {string} contents
- * @returns {Promise}
- */
-WebpackMjmlStore.prototype.writeFile = function (file, contents) {
-  return new Promise(function (resolve) {
-    fs.writeFile(file, contents, function (err) {
-      if (err) {
-        throw err;
-      }
-      resolve(true);
     });
   });
 };
@@ -122,6 +113,22 @@ WebpackMjmlStore.prototype.ensureFileExists = function (file, contents) {
         throw err;
       }
       resolve(contents);
+    });
+  });
+};
+
+/**
+ * @param {string} file
+ * @param {string} contents
+ * @returns {Promise}
+ */
+WebpackMjmlStore.prototype.writeFile = function (file, contents) {
+  return new Promise(function (resolve) {
+    fs.writeFile(file, contents, function (err) {
+      if (err) {
+        throw err;
+      }
+      resolve(true);
     });
   });
 };

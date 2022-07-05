@@ -6,8 +6,10 @@
   "extends": ["plugin:prettier/recommended", "standard"],
   "rules": {
     "camelcase": ["error"],
-    "global-require": "error",
+    "global-require": 0,
     "import/extensions": ["error", "never"],
+    "import/no-duplicates": "error",
+    "import/no-unresolved": "error",
     "indent": ["error", 2],
     "multiline-ternary": 0,
     "semi": ["error", "always"],
