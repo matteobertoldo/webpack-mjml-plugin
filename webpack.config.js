@@ -9,14 +9,13 @@ module.exports = () => {
     entry: {},
     mode: 'development',
     output: {
-      path: join(__dirname, './dist'),
-      filename: 'js/[name].js'
+      path: join(__dirname, 'dist'),
+      clean: true
     },
     plugins: [
       new MJMLPlugin(join(SRC, 'templates'), {
-        extension: '.html',
         filePath: join(SRC, 'components'),
-        outputPath: resolve(__dirname, 'dist/')
+        outputPath: resolve(__dirname, 'dist')
       }),
       new CleanTerminalPlugin({ skipFirstRun: true })
     ],

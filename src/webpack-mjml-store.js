@@ -14,6 +14,8 @@ const WebpackMjmlStore = function (inputPath, options) {
   this.defaultOptions = { extension: '.html', outputPath: process.cwd() };
   this.options = { ...this.defaultOptions, ...options };
   this.options.outputPath = this.options.outputPath.replace(/\\/g, '/');
+  this.tasks = [];
+  this.directories = [];
   this.warnings = [];
 };
 
@@ -23,8 +25,6 @@ const WebpackMjmlStore = function (inputPath, options) {
 WebpackMjmlStore.prototype.apply = function (compiler) {
   const that = this;
   compiler.hooks.make.tapAsync(packageJSON.name, function (compilation, callback) {
-    fs.ensureDirSync(that.options.outputPath);
-
     glob(`${that.inputPath}/**/*.mjml`, function (err, files) {
       if (err) {
         throw err;
@@ -35,7 +35,6 @@ WebpackMjmlStore.prototype.apply = function (compiler) {
         return callback();
       }
 
-      const tasks = [];
       for (const index in files) {
         const file = files[index];
         if (compilation.fileDependencies.add) {
@@ -44,17 +43,26 @@ WebpackMjmlStore.prototype.apply = function (compiler) {
           compilation.fileDependencies.push(file);
         }
 
-        const outputFile = file
-          .replace(that.inputPath, that.options.outputPath)
-          .replace('.mjml', that.options.extension);
-        tasks.push(that.handleFile(file, outputFile));
+        const initialFile = file.replace(
+          that.inputPath,
+          that.options.outputPath === process.cwd() ? compilation.outputOptions.path : that.options.outputPath
+        );
+        const outputFile = initialFile.replace('.mjml', that.options.extension);
+        that.tasks.push(that.handleFile(file, outputFile));
       }
 
-      Promise.all(tasks).then(callback());
+      Promise.all(that.tasks).then(callback());
     });
   });
 
   compiler.hooks.afterCompile.tap(packageJSON.name, (compilation) => {
+    if (that.options.filePath) {
+      that.directories.push(that.options.filePath);
+      that.directories.forEach((directory) => {
+        compilation.contextDependencies.add(directory);
+      });
+    }
+
     compilation.warnings = [...compilation.warnings, ...this.warnings];
   });
 };
