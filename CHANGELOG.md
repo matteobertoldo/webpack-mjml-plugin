@@ -1,3 +1,11 @@
+# [1.2.0](https://github.com/matteobertoldo/webpack-mjml-plugin/compare/v1.1.0...v1.2.0) (2022-07-25)
+
+
+### Features
+
+* **context-dependencies:** added context dependencies when `filePath` options is set ([38b7475](https://github.com/matteobertoldo/webpack-mjml-plugin/commit/38b7475de21c54d6a72f93c68020b39f83107dc9))
+* **context-dependencies:** added context dependencies when filePath option is set ([f7b0ddc](https://github.com/matteobertoldo/webpack-mjml-plugin/commit/f7b0ddca0068208789b29c2ed9afa16d077d4dd1))
+
 # [1.1.0](https://github.com/matteobertoldo/webpack-mjml-plugin/compare/v1.0.2...v1.1.0) (2022-07-05)
 
 
