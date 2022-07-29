@@ -2,7 +2,10 @@ const fs = require('fs-extra');
 const glob = require('glob');
 const mjml2html = require('mjml');
 const packageJSON = require('../package.json'); // eslint-disable-line import/extensions
+const webpack = require('webpack');
+const { RawSource } = webpack.sources;
 const { NoSourceFilesWarning } = require('./errors/');
+const { basename } = require('path');
 
 /**
  * @param {string} inputPath The path where `.mjml` files are located.
@@ -25,7 +28,7 @@ const WebpackMjmlStore = function (inputPath, options) {
 WebpackMjmlStore.prototype.apply = function (compiler) {
   const that = this;
   compiler.hooks.make.tapAsync(packageJSON.name, function (compilation, callback) {
-    glob(`${that.inputPath}/**/*.mjml`, function (err, files) {
+    glob(`${that.inputPath}/**/*.mjml`, async function (err, files) {
       if (err) {
         throw err;
       }
@@ -37,18 +40,17 @@ WebpackMjmlStore.prototype.apply = function (compiler) {
 
       for (const index in files) {
         const file = files[index];
-        if (compilation.fileDependencies.add) {
-          compilation.fileDependencies.add(file);
-        } else {
-          compilation.fileDependencies.push(file);
-        }
-
-        const initialFile = file.replace(
-          that.inputPath,
-          that.options.outputPath === process.cwd() ? compilation.outputOptions.path : that.options.outputPath
-        );
+        const dist = that.options.outputPath === process.cwd() ? compilation.outputOptions.path : that.options.outputPath;
+        const initialFile = file.replace(that.inputPath, dist);
         const outputFile = initialFile.replace('.mjml', that.options.extension);
+
         that.tasks.push(that.handleFile(file, outputFile));
+        compilation.fileDependencies.add(file);
+
+        const data = await that.convertFile(file);
+        compilation.emitAsset(basename(outputFile), new RawSource(data), {
+          javascriptModule: false
+        });
       }
 
       Promise.all(that.tasks).then(callback());
