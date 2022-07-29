@@ -1,3 +1,11 @@
+# [1.3.0](https://github.com/matteobertoldo/webpack-mjml-plugin/compare/v1.2.0...v1.3.0) (2022-07-29)
+
+
+### Features
+
+* **emit-asset:** added file list on compilation ([4629794](https://github.com/matteobertoldo/webpack-mjml-plugin/commit/462979432324ee7baef3dfb86bc85187da99a48d))
+* **emit-asset:** added file list on compilation ([aedf979](https://github.com/matteobertoldo/webpack-mjml-plugin/commit/aedf9795203d667a79be8eff3dc0ddb84a9b9747))
+
 # [1.2.0](https://github.com/matteobertoldo/webpack-mjml-plugin/compare/v1.1.0...v1.2.0) (2022-07-25)
 
 
