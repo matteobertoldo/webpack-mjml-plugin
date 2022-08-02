@@ -1,3 +1,11 @@
+# [1.4.0](https://github.com/matteobertoldo/webpack-mjml-plugin/compare/v1.3.0...v1.4.0) (2022-08-02)
+
+
+### Features
+
+* **webpack-errors:** added new errors handling with `webpack` API ([f2e4beb](https://github.com/matteobertoldo/webpack-mjml-plugin/commit/f2e4bebf65535ada7bf697020990cf624dfdbee9))
+* **webpack-errors:** added new errors handling with webpack API ([0302fe6](https://github.com/matteobertoldo/webpack-mjml-plugin/commit/0302fe6a093bec3d814e8230e1d8e5af1bea009d))
+
 # [1.3.0](https://github.com/matteobertoldo/webpack-mjml-plugin/compare/v1.2.0...v1.3.0) (2022-07-29)
 
 
