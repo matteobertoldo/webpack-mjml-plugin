@@ -10,7 +10,6 @@
         "message": "ci(release): v${nextRelease.version} [skip ci]"
       }
     ],
-    "@semantic-release/npm",
     "@semantic-release/git"
   ],
   "release": {

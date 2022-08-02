@@ -4,7 +4,7 @@ const mjml2html = require('mjml');
 const packageJSON = require('../package.json'); // eslint-disable-line import/extensions
 const webpack = require('webpack');
 const { RawSource } = webpack.sources;
-const { NoSourceFilesWarning } = require('./errors/');
+const { NoSourceFilesWarning, BeautifyOptionDeprecated, MinifyOptionDeprecated, ErrorsMJMLParsing } = require('./errors/');
 const { basename } = require('path');
 
 /**
@@ -20,6 +20,7 @@ const WebpackMjmlStore = function (inputPath, options) {
   this.tasks = [];
   this.directories = [];
   this.warnings = [];
+  this.errors = [];
 };
 
 /**
@@ -47,7 +48,7 @@ WebpackMjmlStore.prototype.apply = function (compiler) {
         that.tasks.push(that.handleFile(file, outputFile));
         compilation.fileDependencies.add(file);
 
-        const data = await that.convertFile(file);
+        const data = await that.readFile(outputFile);
         compilation.emitAsset(basename(outputFile), new RawSource(data), {
           javascriptModule: false
         });
@@ -65,7 +66,18 @@ WebpackMjmlStore.prototype.apply = function (compiler) {
       });
     }
 
+    // @mjml-core v4.9.2
+    if (that.options.beautify && !that.warnings.find((arr) => arr instanceof BeautifyOptionDeprecated)) {
+      that.warnings.push(new BeautifyOptionDeprecated(packageJSON.name));
+    }
+
+    // @mjml-core v4.9.2
+    if (that.options.minify && !that.warnings.find((arr) => arr instanceof MinifyOptionDeprecated)) {
+      that.warnings.push(new MinifyOptionDeprecated(packageJSON.name));
+    }
+
     compilation.warnings = [...compilation.warnings, ...this.warnings];
+    compilation.errors = [...compilation.errors, ...this.errors];
   });
 };
 
@@ -97,13 +109,10 @@ WebpackMjmlStore.prototype.convertFile = function (file) {
         throw err;
       }
 
+      that.errors = [];
       const response = mjml2html(contents, that.options);
-      if (response.errors.length) {
-        console.log('\x1b[31m', `MJML error${response.errors.length > 1 ? 's' : ''} in file "${file}":`, '\x1b[0m');
-      }
-
       for (const index in response.errors) {
-        console.log('-', response.errors[index].formattedMessage);
+        that.errors.push(new ErrorsMJMLParsing(file, response.errors[index].formattedMessage));
       }
 
       resolve(response.html);
@@ -139,6 +148,21 @@ WebpackMjmlStore.prototype.writeFile = function (file, contents) {
         throw err;
       }
       resolve(true);
+    });
+  });
+};
+
+/**
+ * @param {string} file
+ * @returns {Promise}
+ */
+WebpackMjmlStore.prototype.readFile = function (file) {
+  return new Promise(function (resolve) {
+    fs.readFile(file, 'utf8', function (err, data) {
+      if (err) {
+        throw err;
+      }
+      resolve(data);
     });
   });
 };
