@@ -58,7 +58,11 @@ WebpackMjmlStore.prototype.apply = function (compiler) {
     });
   });
 
-  compiler.hooks.afterCompile.tap(packageJSON.name, (compilation) => {
+  compiler.hooks.beforeCompile.tap(packageJSON.name, function () {
+    that.errors = [];
+  });
+
+  compiler.hooks.afterCompile.tap(packageJSON.name, function (compilation) {
     if (that.options.filePath) {
       that.directories.push(that.options.filePath);
       that.directories.forEach((directory) => {
@@ -67,17 +71,17 @@ WebpackMjmlStore.prototype.apply = function (compiler) {
     }
 
     // @mjml-core v4.9.2
-    if (that.options.beautify && !that.warnings.find((arr) => arr instanceof BeautifyOptionDeprecated)) {
+    if (that.options.beautify) {
       that.warnings.push(new BeautifyOptionDeprecated(packageJSON.name));
     }
 
     // @mjml-core v4.9.2
-    if (that.options.minify && !that.warnings.find((arr) => arr instanceof MinifyOptionDeprecated)) {
+    if (that.options.minify) {
       that.warnings.push(new MinifyOptionDeprecated(packageJSON.name));
     }
 
-    compilation.warnings = [...compilation.warnings, ...this.warnings];
-    compilation.errors = [...compilation.errors, ...this.errors];
+    compilation.warnings = [...compilation.warnings, ...that.warnings];
+    compilation.errors = [...compilation.errors, ...that.errors];
   });
 };
 
