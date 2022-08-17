@@ -2,6 +2,7 @@ __tests__/
 .github/
 .husky/
 assets/
+dist/
 .editorconfig
 .eslintrc.json
 .nvmrc
