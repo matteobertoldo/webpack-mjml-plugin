@@ -29,7 +29,7 @@ const WebpackMjmlStore = function (inputPath, options) {
 WebpackMjmlStore.prototype.apply = function (compiler) {
   const that = this;
   compiler.hooks.make.tapAsync(packageJSON.name, function (compilation, callback) {
-    glob(`${that.inputPath}/**/*.mjml`, async function (err, files) {
+    glob(`${that.inputPath}`, async function (err, files) {
       if (err) {
         throw err;
       }
