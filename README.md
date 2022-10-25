@@ -71,11 +71,11 @@ module.exports = {
 
 In addition to the options available in the MJML documentation, there are 3 additional parameters described in the table below:
 
-| Parameter            |   Type   |     Default     | Description                                         |
-| -------------------- | :------: | :-------------: | --------------------------------------------------- |
-| `inputPath`          | `string` |   `undefined`   | The path where `.mjml` files are located.           |
-| `options.extensions` | `string` |     `.html`     | The default output extension.                       |
-| `options.outputPath` | `string` | `process.cwd()` | The path where compiled files should be written to. |
+| Parameter            |   Type   |     Default     | Description                                                                                                                                               |
+| -------------------- | :------: | :-------------: | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `inputPath`          | `string` |   `undefined`   | The path where `.mjml` files are located. The string supports [glob](https://github.com/isaacs/node-glob#glob-primer) syntax ex: `path/to/mjml/**/*.mjml` |
+| `options.extensions` | `string` |     `.html`     | The default output extension.                                                                                                                             |
+| `options.outputPath` | `string` | `process.cwd()` | The path where compiled files should be written to.                                                                                                       |
 
 ## Contributing :busts_in_silhouette:
 
