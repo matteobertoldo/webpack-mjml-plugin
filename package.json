@@ -1,6 +1,6 @@
 {
   "name": "webpack-mjml-plugin",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Webpack MJML plugin for compiling MJML files.",
   "main": "index.js",
   "scripts": {
