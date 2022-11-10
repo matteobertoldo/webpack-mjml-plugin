@@ -42,7 +42,7 @@ WebpackMjmlStore.prototype.apply = function (compiler) {
       for (const index in files) {
         const file = files[index];
         const dist = that.options.outputPath === process.cwd() ? compilation.outputOptions.path : that.options.outputPath;
-        const initialFile = file.replace(that.inputPath, dist);
+        const initialFile = `${dist}/${basename(file)}`;
         const outputFile = initialFile.replace('.mjml', that.options.extension);
 
         that.tasks.push(that.handleFile(file, outputFile));
