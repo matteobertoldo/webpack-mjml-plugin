@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/matteobertoldo/webpack-mjml-plugin/compare/v1.4.0...v2.0.0) (2022-10-25)
+
+
+### chore
+
+* added a support for custom glob patterns ([e892deb](https://github.com/matteobertoldo/webpack-mjml-plugin/commit/e892deb7cbac57fbe2bb61286ddec324870126a3))
+
+
+### BREAKING CHANGES
+
+* removed the default final glob patterns that included *.mjml.
+
 # [1.4.0](https://github.com/matteobertoldo/webpack-mjml-plugin/compare/v1.3.0...v1.4.0) (2022-08-02)
 
 
