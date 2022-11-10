@@ -1,6 +1,7 @@
 const { join, resolve } = require('path');
 const MJMLPlugin = require('./src/webpack-mjml-store');
 const CleanTerminalPlugin = require('clean-terminal-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const SRC = './__tests__/mjml/';
 
 module.exports = () => {
@@ -13,7 +14,8 @@ module.exports = () => {
       clean: true
     },
     plugins: [
-      new MJMLPlugin(join(SRC, 'templates'), {
+      new CleanWebpackPlugin(),
+      new MJMLPlugin(join(SRC, 'templates/*.mjml'), {
         filePath: join(SRC, 'components'),
         outputPath: resolve(__dirname, 'dist')
       }),
