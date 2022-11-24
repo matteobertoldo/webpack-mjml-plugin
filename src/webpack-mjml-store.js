@@ -48,8 +48,9 @@ WebpackMjmlStore.prototype.apply = function (compiler) {
         that.tasks.push(that.handleFile(file, outputFile));
         compilation.fileDependencies.add(file);
 
-        const data = await that.convertFile(file, false);
+        const data = await that.convertFile(file);
         compilation.emitAsset(basename(outputFile), new RawSource(data), {
+          immutable: false,
           javascriptModule: false
         });
       }
