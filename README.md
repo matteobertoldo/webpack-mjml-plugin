@@ -19,6 +19,9 @@
     <img src="https://app.travis-ci.com/matteobertoldo/webpack-mjml-plugin.svg?branch=master" alt="Travis CI Build">
   </a>
   <a href="https://www.npmjs.com/package/webpack-mjml-plugin">
+    <img src="https://img.shields.io/npm/dt/webpack-mjml-plugin.svg" alt="NPM Package Downloads" />
+  </a>
+  <a href="https://www.npmjs.com/package/webpack-mjml-plugin">
     <img src="https://img.shields.io/npm/v/webpack-mjml-plugin.svg" alt="NPM Package Version" />
   </a>
 </p>
