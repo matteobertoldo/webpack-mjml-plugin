@@ -13,6 +13,6 @@
     ]
   ],
   "release": {
-    "branches": ["master", "release"]
+    "branches": ["master"]
   }
 }
