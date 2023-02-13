@@ -14,9 +14,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           cache: npm
-          node-version: 16.15.0 # from .nvmrc file
+          node-version: 18.12.0 # from .nvmrc file
       - run: npm i
       - run: npm run parse
       - run: npx semantic-release
-        # env:
-        #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
