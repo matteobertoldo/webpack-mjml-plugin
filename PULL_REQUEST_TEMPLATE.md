@@ -15,4 +15,4 @@
 Check all those that are applicable and complete. Put an `x` between the brackets (without spaces).
 
 - [ ] Merged with latest `master` branch
-- [ ] Travis CI passes (Linux support)
+- [ ] GitHub CI passes (Linux support)
