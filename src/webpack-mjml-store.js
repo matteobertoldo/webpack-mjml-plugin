@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 const glob = require('glob');
 const mjml2html = require('mjml');
-const packageJSON = require('../package.json'); // eslint-disable-line import/extensions
+const packageJSON = require('../package');
 const webpack = require('webpack');
 const { RawSource } = webpack.sources;
 const { NoSourceFilesWarning, BeautifyOptionDeprecated, MinifyOptionDeprecated, ErrorsMJMLParsing } = require('./errors/');
@@ -48,9 +48,9 @@ WebpackMjmlStore.prototype.apply = function (compiler) {
         that.tasks.push(that.handleFile(file, outputFile));
         compilation.fileDependencies.add(file);
 
-        const data = await that.convertFile(file);
-        compilation.emitAsset(basename(outputFile), new RawSource(data), {
-          immutable: false,
+        const data = await that.convertFile(file, outputFile);
+        compilation.emitAsset(basename(outputFile), new RawSource(data.response), {
+          immutable: data.response === data.readable,
           javascriptModule: false
         });
       }
@@ -104,25 +104,27 @@ WebpackMjmlStore.prototype.handleFile = function (file, outputFile) {
 
 /**
  * @param {string} file
- * @param {boolean} emitErrors
+ * @param {string} outputFile
  * @returns {Promise}
  */
-WebpackMjmlStore.prototype.convertFile = function (file, emitErrors = true) {
+WebpackMjmlStore.prototype.convertFile = function (file, outputFile) {
   const that = this;
   return new Promise(function (resolve) {
-    fs.readFile(file, 'utf8', function (err, contents) {
+    fs.readFile(file, 'utf8', async function (err, contents) {
       if (err) {
         throw err;
       }
 
       const response = mjml2html(contents, that.options);
-      if (emitErrors) {
-        for (const index in response.errors) {
-          that.errors.push(new ErrorsMJMLParsing(file, response.errors[index].formattedMessage));
-        }
+      for (const index in response.errors) {
+        that.errors.push(new ErrorsMJMLParsing(file, response.errors[index].formattedMessage));
       }
 
-      resolve(response.html);
+      const data = await that.readFile(outputFile);
+      resolve({
+        response: response.html,
+        readable: data
+      });
     });
   });
 };
@@ -150,12 +152,35 @@ WebpackMjmlStore.prototype.ensureFileExists = function (file, contents) {
  */
 WebpackMjmlStore.prototype.writeFile = function (file, contents) {
   return new Promise(function (resolve) {
-    fs.writeFile(file, contents, function (err) {
-      if (err) {
-        throw err;
-      }
+    try {
+      fs.writeFile(file, contents, function (err) {
+        if (err) {
+          throw err;
+        }
+        resolve(true);
+      });
+    } catch {
       resolve(true);
-    });
+    }
+  });
+};
+
+/**
+ * @param {string} file
+ * @returns {Promise}
+ */
+WebpackMjmlStore.prototype.readFile = function (file) {
+  return new Promise(function (resolve) {
+    try {
+      fs.readFile(file, 'utf8', function (err, data) {
+        if (err) {
+          throw err;
+        }
+        resolve(data);
+      });
+    } catch {
+      resolve(true);
+    }
   });
 };
 
