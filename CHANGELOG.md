@@ -1,3 +1,13 @@
+# [2.1.0](https://github.com/matteobertoldo/webpack-mjml-plugin/compare/v2.0.1...v2.1.0) (2023-02-13)
+
+
+### Features
+
+* **cache:** added cache mode after compilation [#23](https://github.com/matteobertoldo/webpack-mjml-plugin/issues/23) ([eb73c1b](https://github.com/matteobertoldo/webpack-mjml-plugin/commit/eb73c1b434da81ba5bb6fc5766bc69e0eb1eb367))
+* **cache:** added cache mode after compilation [#23](https://github.com/matteobertoldo/webpack-mjml-plugin/issues/23) ([104b85e](https://github.com/matteobertoldo/webpack-mjml-plugin/commit/104b85efe3ccc55a0ccde0a2fdb715a87e0ad68c))
+* **cache:** added cache mode after compilation [#23](https://github.com/matteobertoldo/webpack-mjml-plugin/issues/23) ([426efb3](https://github.com/matteobertoldo/webpack-mjml-plugin/commit/426efb3946ceb3bc30072d3dd513555a4a65e1f4))
+* **cache:** added cache mode after compilation [#23](https://github.com/matteobertoldo/webpack-mjml-plugin/issues/23) ([2637447](https://github.com/matteobertoldo/webpack-mjml-plugin/commit/263744788945328a4b0ee9f97ab6d13ff62e0a43))
+
 ## [2.0.1](https://github.com/matteobertoldo/webpack-mjml-plugin/compare/v2.0.0...v2.0.1) (2022-11-10)
 
 
