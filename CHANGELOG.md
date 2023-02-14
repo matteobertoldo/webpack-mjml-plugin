@@ -1,3 +1,11 @@
+## [2.1.1](https://github.com/matteobertoldo/webpack-mjml-plugin/compare/v2.1.0...v2.1.1) (2023-02-14)
+
+
+### Bug Fixes
+
+* fixed the throw error when the dist folder don't exist ([6f99e1c](https://github.com/matteobertoldo/webpack-mjml-plugin/commit/6f99e1cc56f3bf3a9ce5418f813b81f8729dfa24))
+* fixed the throw error when the dist folder don't exist ([4bb6bac](https://github.com/matteobertoldo/webpack-mjml-plugin/commit/4bb6bacf2ed6237a6ff4dfa232e846d1ec4c4491))
+
 # [2.1.0](https://github.com/matteobertoldo/webpack-mjml-plugin/compare/v2.0.1...v2.1.0) (2023-02-13)
 
 
