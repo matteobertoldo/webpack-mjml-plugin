@@ -44,7 +44,7 @@ const MJMLPlugin = require('webpack-mjml-plugin');
 module.exports = {
   // ...
   plugins: [
-    new MJMLPlugin('src/to/mjml', {
+    new MJMLPlugin('src/to/mjml/*.mjml', {
       extension: '.html',
       outputPath: path.resolve(__dirname, 'dist/to/mjml')
     });
