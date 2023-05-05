@@ -6,7 +6,7 @@
   />
 </div>
 
-<p align="center">Webpack <a href="https://mjml.io">MJML</a> Plugin for compiling MJML files.</p>
+<p align="center">Webpack <a href="https://mjml.io">MJML</a> Plugin for compiling `.mjml files.</p>
 
 <p align="center">
   <a href="https://github.com/prettier/prettier">
