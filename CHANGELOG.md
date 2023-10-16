@@ -1,3 +1,11 @@
+## [2.1.2](https://github.com/matteobertoldo/webpack-mjml-plugin/compare/v2.1.1...v2.1.2) (2023-10-16)
+
+
+### Bug Fixes
+
+* compilation output path ([5f90768](https://github.com/matteobertoldo/webpack-mjml-plugin/commit/5f9076872a93276b401d12e57d2a6aeb02adb2fe))
+* output generation in subfolders ([3374523](https://github.com/matteobertoldo/webpack-mjml-plugin/commit/3374523d791e696a34729f3d3fc1a784fcf59905))
+
 ## [2.1.1](https://github.com/matteobertoldo/webpack-mjml-plugin/compare/v2.1.0...v2.1.1) (2023-02-14)
 
 
