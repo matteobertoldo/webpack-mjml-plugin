@@ -5,7 +5,7 @@ const packageJSON = require('../package');
 const webpack = require('webpack');
 const { RawSource } = webpack.sources;
 const { NoSourceFilesWarning, BeautifyOptionDeprecated, MinifyOptionDeprecated, ErrorsMJMLParsing } = require('./errors/');
-const { basename } = require('path');
+const { basename, relative } = require('path');
 
 /**
  * @param {string} inputPath The path where `.mjml` files are located.
@@ -49,7 +49,7 @@ WebpackMjmlStore.prototype.apply = function (compiler) {
         compilation.fileDependencies.add(file);
 
         const data = await that.convertFile(file, outputFile);
-        compilation.emitAsset(basename(outputFile), new RawSource(data.response), {
+        compilation.emitAsset(relative(compilation.outputOptions.path, outputFile), new RawSource(data.response), {
           immutable: data.response === data.readable,
           javascriptModule: false
         });
