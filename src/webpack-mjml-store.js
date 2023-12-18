@@ -153,7 +153,7 @@ WebpackMjmlStore.prototype.ensureFileExists = function (file, contents) {
 WebpackMjmlStore.prototype.writeFile = function (file, contents) {
   return new Promise(function (resolve) {
     try {
-      fs.writeFile(file, contents, function (err) {
+      fs.writeFile(file, contents.response, function (err) {
         if (err) {
           throw err;
         }
