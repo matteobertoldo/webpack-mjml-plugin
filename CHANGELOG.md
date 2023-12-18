@@ -1,3 +1,12 @@
+## [2.1.3](https://github.com/matteobertoldo/webpack-mjml-plugin/compare/v2.1.2...v2.1.3) (2023-12-18)
+
+
+### Bug Fixes
+
+* package.json & package-lock.json to reduce vulnerabilities ([54015b0](https://github.com/matteobertoldo/webpack-mjml-plugin/commit/54015b038d9364ce83dfc5e450c07f9bdbe0b76b))
+* read response from content object [#38](https://github.com/matteobertoldo/webpack-mjml-plugin/issues/38) ([dc8758d](https://github.com/matteobertoldo/webpack-mjml-plugin/commit/dc8758d8d35f1f960b389600a935495029f90620))
+* read response from content object [#38](https://github.com/matteobertoldo/webpack-mjml-plugin/issues/38) ([01c5869](https://github.com/matteobertoldo/webpack-mjml-plugin/commit/01c586987d1b1018324edf1a70c2c7f63fd20e0d))
+
 ## [2.1.2](https://github.com/matteobertoldo/webpack-mjml-plugin/compare/v2.1.1...v2.1.2) (2023-10-16)
 
 
