@@ -59,7 +59,7 @@
   },
   "dependencies": {
     "fs-extra": "^11.2.0",
-    "glob": "^8.1.0"
+    "glob": "^9.0.0"
   },
   "lint-staged": {
     "*.{md,js,json,yml}": "prettier --write",
